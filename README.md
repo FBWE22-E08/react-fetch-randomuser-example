@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Building a React Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A few things we should consider;
 
-## Available Scripts
+1. How an appliction handles state and why we use it
+2. How render lifecycle works within a React application
+3. How promises work, and why we use them
+4. Working with JSON
 
-In the project directory, you can run:
+```
+{
+    "results": [ { "gender": "male" } ]
+}
+```
 
-### `npm start`
+# State
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+What is state?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Is temporary, which means it is not permanent. State represents the current values stored within an application (or component).
 
-### `npm test`
+# Naming conventions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Standardized practise for naming our components / functions / variables
 
-### `npm run build`
+In React, for all React hooks there is a naming convention - all hooks begin with the word "use".
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Concepts you should be aware of
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- hoisting
+- `this`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# destructuring array
 
-### `npm run eject`
+`const [counter, setCounter] = useState(0);`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# LIFECYCLES AND STATE/PROPS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+When the data for a component changes, that component must be re-rendered
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When you update the state, you are also re-rendering the component
 
-## Learn More
+When the props change, you are also re-rendering the component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Why does fetch use a Promise?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Because the request takes time (how long it takes for our computer to get a response from the server)
+- Non-blocking, parallel, asynchronous
 
-### Code Splitting
+# async / await
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- With `await` we convert our asynchronous operation into a synchronous
+- With `async` we force the function to return a promise
 
-### Analyzing the Bundle Size
+# Event loop
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- function 1
+- function 2
+- promises
 
-### Making a Progressive Web App
+# Promises
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3 states of a promise
 
-### Advanced Configuration
+- Pending
+- Rejected
+- Resolved
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Difference between JSON and JavaScript object
 
-### Deployment
+- JSON keys are contained within double quotes
+- JSON is very strict
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# What is an expression in programming / maths?
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+An expression resolves to a value
